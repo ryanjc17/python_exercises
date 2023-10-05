@@ -1,0 +1,1 @@
+print("How many planes does the United States Airforce have compared to the rest of the world?", float(100 * 8 % 16.3))
