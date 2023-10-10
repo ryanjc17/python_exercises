@@ -10,7 +10,8 @@ input("?")
 answer_input = "> "
 
 print("Opening the file...")
-target = open(filename, 'w')
+#changing the 'w' to an 'r+' allows for reading and writing within the same script rather than having to call 'r' as a part of the bottom function call
+target = open(filename, 'r+')
 
 print("Truncating the file. Goodbye!")
 target.truncate()
@@ -36,6 +37,6 @@ if close_file == 'y':
 if close_file == 'n':
 	
 	#reading the file after writing it requires the 'r' string attached within the open function
-	target = open(filename, 'r')
+	target = open(filename)
 	print(target.read())
 	target.close()
