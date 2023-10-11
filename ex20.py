@@ -10,6 +10,8 @@ def rewind(f):
 
 def print_a_line(line_count, f):
 	print(line_count, f.readline(), end="")
+	line_count += 1
+	return line_count
 
 current_file = open(input_file)
 
@@ -24,7 +26,7 @@ rewind(current_file)
 print("Let's print three lines:")
 
 current_line = 1
-current_line +=1
-print_a_line(current_line, current_file)
-print_a_line(current_line, current_file)
-print_a_line(current_line, current_file)
+
+current_line = print_a_line(current_line, current_file)
+current_line = print_a_line(current_line, current_file)
+current_line = print_a_line(current_line, current_file)
