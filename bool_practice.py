@@ -215,6 +215,8 @@ final_input = input(answer_input)
 final_score = (correct_count / 20) * 100
 
 if final_input == 'y':
+	print("*****************************************")
 	print(f"You recieved {correct_count}/20 points which is {final_score}%!")
+	print("*****************************************")
 else:
 	print("Thank you for participating!")
