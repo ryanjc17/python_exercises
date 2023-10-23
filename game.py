@@ -66,10 +66,33 @@ for index, monster in enumerate(enemies):
 	while m_health > 0:
 		x = input(input__)
 		if x == 'Att':
-			m_health = m_health - round(pattack + (pstrength/10) * (pagility/15) * (pintellect/20))
+			m_health = m_health - round(pattack + (1 + pstrength/5) * (1 + pagility/10) * (1 + pintellect/15))
 			print(f"{monster} has {m_health} health remaining!")
 		elif x == 'Def':
 			print(f"{pname} defended!")
-			print(f"{pname} has {phealth} health remaining!")
+			phealth += round((pintellect / 5) + 2)
+			print(f"{pname} gained 5 health points and has {phealth} health remaining!")
 	print("The monster has been defeated!")
+	print("You have gained a level!")
+	print("Select what attribute you would like to increase:")
+	print("1. Health")
+	print("2. Attack")
+	print("3. Strength")
+	print("4. Agility")
+	print("5. Intellect")
+	lvlup = input(input_)
+	if lvlup == '1':
+		phealth += 1
+	elif lvlup == '2':
+		pattack += 1
+	elif lvlup == '3':
+		pstrength += 2
+	elif lvlup == '4':
+		pagility += 2
+	elif lvlup == '5':
+		pintellect +=1
+	else:
+		print("Onward and upward!")
+	print("Congratulations! Onto the next monster!")
+
 
