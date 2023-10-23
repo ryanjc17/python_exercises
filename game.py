@@ -14,17 +14,17 @@ pintellect = 0
 
 #enemy list
 enemies = [
-"Rat", 10, 5,
-"Pigeon", 15, 3,
-"Cat", 20, 5,
-"Dog", 25, 6,
-"Pig", 30, 7,
-"Heffer", 45, 4,
-"Camel", 60, 7,
-"Elephant", 85, 12,
-"Rhino", 95, 20,
-"Giraffe", 110, 15,
-"BOSS: Dragon", 250, 20
+["Rat", 10, 5],
+["Pigeon", 15, 3],
+["Cat", 20, 5],
+["Dog", 25, 6],
+["Pig", 30, 7],
+["Heffer", 45, 4],
+["Camel", 60, 7],
+["Elephant", 85, 12],
+["Rhino", 95, 20],
+["Giraffe", 110, 15],
+["BOSS: Dragon", 250, 20]
 ]
 
 #Character Stats Generation
@@ -55,18 +55,21 @@ print(f"\tStrength: {pstrength}")
 print(f"\tAgility: {pagility}")
 print(f"\tIntellect: {pintellect}")
 
-m_health = enemies[1]
-m_attack = enemies[2]
-#game design
+
+#Attack/Defend Stucture
 
 for index, monster in enumerate(enemies):
-	print(f"#{index}. {monster}")
+	m_health = monster[1]
+	m_attack = monster[2]
+	print(f"#{index + 1}. {monster}")
 	print(f"Health: {m_health}, Attack: {m_attack}")
-	x = input(input__)
-	if x == 'Att':
-		m_health = m_health - round(pattack + (pstrength/10) * (pagility/15) * (pintellect/20))
-		print(f"{monster} has {m_health} health remaining!")
-	elif x == 'Def':
-		print(f"{pname} defended!")
-		print(f"{pname} has {phealth} health remaining!")
+	while m_health > 0:
+		x = input(input__)
+		if x == 'Att':
+			m_health = m_health - round(pattack + (pstrength/10) * (pagility/15) * (pintellect/20))
+			print(f"{monster} has {m_health} health remaining!")
+		elif x == 'Def':
+			print(f"{pname} defended!")
+			print(f"{pname} has {phealth} health remaining!")
+	print("The monster has been defeated!")
 
