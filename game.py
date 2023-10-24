@@ -59,25 +59,28 @@ print("************************")
 
 #Attack/Defend Stucture
 for index, monster in enumerate(enemies):
-	if phealth >= 0:
-		m_health = monster[1]
-		m_attack = monster[2]
-		print(f"#{index + 1}. {monster[0]}")
-		print(f"Health: {m_health}, Attack: {m_attack}")
-		while m_health > 0:
-			x = input(input__)
-			if x == '1':
-				m_health = m_health - round(pattack + (1 + pstrength/5) * (1 + pagility/10) * (1 + pintellect/15))
-				phealth -= m_attack
-				print(f"{monster[0]} has {m_health} health remaining!")
-				print(f"{monster[0]} hit {pname} for {m_attack} damage. {pname} has {phealth} health remaining!")
-			elif x == '2':
-				print(f"{pname} defended!")
-			elif x == '3':
-				print(f"{pname} healed!")
-				phealth += round((pintellect / 5) * 2)
-				m_health = m_health - round(pattack + (1 + pstrength/5) * (1 + pagility/10) * (1 + pintellect/15))
-				print(f"{pname} gained health points and was attacked for {m_attack}.{pname} has {phealth} health remaining!")
+	m_health = monster[1]
+	m_attack = monster[2]
+	print(f"#{index + 1}. {monster[0]}")
+	print(f"Health: {m_health}, Attack: {m_attack}")
+	while m_health > 0:
+		x = input(input__)
+		if x == '1':
+			m_health = m_health - round(pattack + (1 + pstrength/5) * (1 + pagility/10) * (1 + pintellect/15))
+			phealth -= m_attack
+			if phealth < 0:
+				print("You have been killed!")
+				break
+			print(f"{monster[0]} has {m_health} health remaining!")
+			print(f"{monster[0]} hit {pname} for {m_attack} damage. {pname} has {phealth} health remaining!")
+		elif x == '2':
+			print(f"{pname} defended!")
+		elif x == '3':
+			print(f"{pname} healed!")
+			phealth += round((pintellect / 5) * 2)
+			m_health = m_health - round(pattack + (1 + pstrength/5) * (1 + pagility/10) * (1 + pintellect/15))
+			print(f"{pname} gained health points and was attacked for {m_attack}.{pname} has {phealth} health remaining!")
+	if phealth > 0:	
 		print("The monster has been defeated!")
 		print("You have gained a level!")
 		print("Select what attribute you would like to increase:")
@@ -99,8 +102,9 @@ for index, monster in enumerate(enemies):
 			pintellect += 1
 		else:
 			print("Onward and upward!")
-		print("Congratulations! Onto the next monster!")
 	else:
-		print("Game Over!")
-		print(f"Thank you for playing adventurer {pname}!")
+		print("Game Over!")		
+		break
+		
+	
 	
