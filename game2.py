@@ -71,6 +71,7 @@ def forest_e():
 
 def forest_w():
 	print("You find yourself in a forest that looks as if it is opening up. Which direction do you go? (N/S/E/W)")
+	choice = input(input_)
 	if choice == 'n':
 		bear_cave()
 	elif choice == 's':
