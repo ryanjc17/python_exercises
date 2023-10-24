@@ -34,9 +34,32 @@ def bear_cave():
 			print("The bear lays on it back and growls.\nIt appears it wants a belly rub.")
 			print("You pet the bear and leave the cave, dropping you back in the area where you first started.")
 			start()
+	else:
+		dead("The bear mawls you and treats you as his dinner.")
 
+def spider_cave():
+	print("You find yourself in a cave inhabited by spiders!\nAll the spiders seem to be sleeping.\nWhat do you do?")
+	choice = input(input_)
+	if "scream" in choice:
+		dead("You woke all the spiders, moron.\nThey wrap you in their web and throw you in the corner.")
+	elif "sing" in choice:
+		print("The spiders wake but start dancing.\nYou take this opportunity to exit the cave and return to the forest.")
+		start()
+	elif "nothing" in choice:
+		dead("Although you did nothing, you created too much noise entering the cave.\nThe spiders wrap you in their web and throw you in the corner.")
+	else:
+		dead("The spiders wrap you in their web.")
 
-	
+def forest_e():
+	print("You find yourself deeper in the forest.")
+	print("The trees start making noise.")
+	print("What do you do?")
+	choice = input(input_)
+	if "scream" in choice:
+		print("The ground starts to shake.")
+		print("The trees turn into ents and surround you.")
+		dead("What a shameful way to die.")
+	elif "nothing" in choice:
 	
 print("Please enter your name adventurer:")
 pname = input(input_)
