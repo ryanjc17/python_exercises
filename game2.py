@@ -85,7 +85,6 @@ def complete():
 	print("Thanks for playing!")
 
 def dead():
-	def dead(why):
 	print(why, "Good job!")
 	exit(0)
 	
