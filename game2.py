@@ -60,6 +60,8 @@ def forest_e():
 		print("The trees turn into ents and surround you.")
 		dead("What a shameful way to die.")
 	elif "nothing" in choice:
+		print("You think it may be better to head back to where you started.")
+		start()
 	
 print("Please enter your name adventurer:")
 pname = input(input_)
