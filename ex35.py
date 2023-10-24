@@ -20,7 +20,7 @@ def bear_room():
 	print("There is a bear here.")
 	print("The bear has a bunch of honey.")
 	print("The fat bear is in front of another door")
-	print("how are you going to move the bear?")
+	print("How are you going to move the bear?")
 	bear_moved = False
 
 	while True:
@@ -51,6 +51,8 @@ def cthulhu_room():
 		start()
 	elif "head" in choice:
 		dead("Well that was tasty!")
+	elif "insanity" in choice:
+		bear_room()
 	else:
 		cthulhu_room()
 
