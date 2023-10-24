@@ -5,7 +5,6 @@ input_ = "> "
 
 
 def start():
-	print(f"Welcome to the start of your adventure {pname}!")
 	print("You find yourself in the middle of the forrest.\nWhich direction would you like to go? (N,S,E,W)")
 	choice = input(input_)
 	if choice == 'n':
@@ -62,9 +61,37 @@ def forest_e():
 	elif "nothing" in choice:
 		print("You think it may be better to head back to where you started.")
 		start()
+	elif "torch" in choice:
+		print("You torch the forest.")
+		print("I mean there were better ways to handle this but I guess it works.")
+		print("You make your way back to where you started.")
+		start()
+	else:
+		dead("I don't know what you mean. Anyway, the trees just killed you.")
+
+def forest_w():
+	print("You find yourself in a forest that looks as if it is opening up. Which direction do you go? (N/S/E/W)")
+	if choice == 'n':
+		bear_cave()
+	elif choice == 's':
+		spider_cave()
+	elif choice == 'e':
+		start()
+	elif choice == 'w':
+		complete()
+
+def complete():
+	print("Congratulations, you made it out of the forest!")
+	print("Thanks for playing!")
+
+def dead():
+	def dead(why):
+	print(why, "Good job!")
+	exit(0)
 	
 print("Please enter your name adventurer:")
 pname = input(input_)
+print(f"Welcome to the start of your adventure {pname}!")
 
 start()
 
