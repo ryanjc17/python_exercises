@@ -78,7 +78,7 @@ for index, monster in enumerate(enemies):
 		elif x == '3':
 			print(f"{pname} healed!")
 			phealth += round((pintellect / 5) * 2)
-			m_health = m_health - round(pattack + (1 + pstrength/5) * (1 + pagility/10) * (1 + pintellect/15))
+			phealth -= m_attack
 			if phealth < 0:
 				print("You have been killed!")
 				break
