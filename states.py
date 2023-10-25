@@ -47,7 +47,6 @@ states = {
 	'Utah': 'UT',
 	'Vermont': 'VT',
 	'Virginia': 'VA',
-	'Virgin Islands': 'VI',
 	'Washington': 'WA',
 	'West Virginia': 'WV',
 	'Wisconsin': 'WI',
@@ -88,13 +87,30 @@ cities = {
 	'NM': ['Albuquerque', 'Las Cruces', 'Rio Rancho', 'Sante Fe'],
 	'NY': ['New York', 'Buffalo', 'Rochester', 'Yonkers', 'Syracuse', 'Albany', 'New Rochelle', 'Mount Vernon', 'Schenectady'],
 	'NC': ['Charlotte', 'Raleigh', 'Greensboro', 'Winston-Salem', 'Durham', 'Fayetteville', 'Cary', 'Wilmington', 'High Point', 'Greenville', 'Asheville', 'Concord', 'Gastonia', 'Jacksonville'],
-
+	'ND': ['Fargo'],
+	'OH': ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron', 'Dayton', 'Parma', 'Canton', 'Youngstown'],
+	'OK': ['Oklahoma City', 'Tulsa', 'Norman', 'Broken Arrow', 'Lawton', 'Edmon'],
+	'OR': ['Portland', 'Eugene', 'Salem', 'Gresham', 'Hillsboro', 'Beaverton', 'Bend', 'Medford'],
+	'PA': ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Reading', 'Scranton', 'Bethlehem'],
+	'RI': ['Providence', 'Warwick', 'Cranston', 'Pawtucket'],
+	'SC': ['Columbia', 'Charleston', 'North Charleston', 'Mount Pleasant', 'Rock Hill'],
+	'SD': ['Sioux Falls', 'Rapid City'],
+	'TN': ['Memphis', 'Nashville', 'Knoxville', 'Chattanooga', 'Clarkesville', 'Murfreesborog'],
+	'TX': ['Houston', 'San Antonio', 'Dallas', 'Austin', 'Ft. Worth', 'El Paso', 'Arlington', 'Corpus Christi', 'Plano', 'Laredo', 'Lubbock', 'Garland', 'Irving', 'Amarillo', 'Grand Prairie', 'Brownsville', 'Pasadena', 'Mesquite', 'McKinney', 'McAllen', 'Killeen', 'Waco', 'Carrolton', 'Beaumont', 'Abilene', 'Frisco', 'Denton', 'Midland', 'Wichita Falls', 'Odessa', 'Round Rock', 'Richardson', 'Tyler', 'Lewisville', 'College Station', 'San Angelo', 'Pearland', 'Allen', 'League City', 'Longview', 'Sugar Land', 'Edinburg', 'Mission', 'Bryan', 'Baytown', 'Pharr', 'Missouri City'],
+	'UT': ['Salt Lake City', 'West Valley City', 'Provo', 'West Jordan', 'Orem', 'Sandy', 'Ogden', 'St. George', 'Layton'],
+	'VT': ['Burlington'],
+	'VA': ['Virginia Beach', 'Norfolk', 'Chesapeake', 'Richmond', 'Newport News', 'Alexandira', 'Hampton', 'Roanoke', 'Portsmouth', 'Suffolk', 'Lynchburg'],
+	'WA': ['Seattle', 'Spokane', 'Tacoma', 'Vancouver', 'Bellevue', 'Everett', 'Kent', 'Yakima', 'Renton', 'Spokane Valley', 'Federal Way', 'Bellingham', 'Kennewick', 'Auburn'],
+	'WV': ['Charleston'],
+	'WI': ['Milwaukee', 'Madison', 'Green Bay', 'Kenosha', 'Racine', 'Appleton', 'Waukesha'],
+	'WY': ['Cheyenne']
 }
 
 input_ = "> "
 
 state__ = input(input_)
-
-print(f"{states[state__]}")
-
+while state__ != 'break':
+	print (f"Total cities in the top 500: {len(cities[states[state__]])}")
+	print (F"Cities found in the top 500: {', '.join(cities[states[state__]])}")
+	state__ = input(input_)
 
