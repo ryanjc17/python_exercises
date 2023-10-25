@@ -110,5 +110,5 @@ input_ = "List a State or 'break'> "
 state__ = input(input_)
 while state__ != 'break':
 	print (f"Total cities in the top 500: {len(cities[states[state__]])}")
-	print (F"Cities found in the top 500: {', '.join(cities[states[state__]])}")
+	print (F"Cities found in the top 500, sorted by population: {', '.join(cities[states[state__]])}")
 	state__ = input(input_)
