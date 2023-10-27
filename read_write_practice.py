@@ -13,8 +13,8 @@ with open(input_, mode=input__) as csv_file:
 	#look at rows and if row is 0, list column names and generate column names
 	for row in csv_reader:
 		if line == 0:
-			print(f"Column names are [{", ".join(row)}]")
 			column_names = ", ".join(row)
+			print(f"Column names are [{column_names}]")
 			line +=1
 		else:
 			print(row)
